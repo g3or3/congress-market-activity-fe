@@ -7,6 +7,7 @@ export const theme = {
 	darkerPurple: "#6a51a3",
 	stockPageBackgroundColor: "#121722",
 	errorMessageColor: "#e57373",
+	lightGrey: "#a5a5a5",
 	darkGrey: "#696969",
 };
 

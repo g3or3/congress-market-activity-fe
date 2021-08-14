@@ -41,7 +41,15 @@ const SignUp = () => {
 				<LoginHeading>Sign Up</LoginHeading>
 				<LoginForm onSubmit={handleSubmit}>
 					<FormLabel>Email</FormLabel>
-					<LoginInput name="email" value={email} onChange={handleChange} />
+					<LoginInput
+						name="email"
+						type="email"
+						value={email}
+						onChange={handleChange}
+						placeholder="Enter a valid email address"
+						onFocus={(e) => (e.target.placeholder = "")}
+						onBlur={(e) => (e.target.placeholder = "Enter a valid email address")}
+					/>
 
 					<FormLabel>Password</FormLabel>
 					<LoginInput
@@ -49,6 +57,10 @@ const SignUp = () => {
 						type="password"
 						value={password}
 						onChange={handleChange}
+						placeholder="Enter a valid password"
+						onFocus={(e) => (e.target.placeholder = "")}
+						onBlur={(e) => (e.target.placeholder = "Enter a valid password")}
+						style={!password ? { fontWeight: "initial" } : null}
 					/>
 
 					<FormLabel>Confirm Password</FormLabel>
@@ -57,6 +69,10 @@ const SignUp = () => {
 						type="password"
 						value={confirmPassword}
 						onChange={handleChange}
+						placeholder="Re-enter your password"
+						onFocus={(e) => (e.target.placeholder = "")}
+						onBlur={(e) => (e.target.placeholder = "Re-enter your password")}
+						style={!confirmPassword ? { fontWeight: "initial" } : null}
 					/>
 
 					<LoginButton>Sign Up</LoginButton>

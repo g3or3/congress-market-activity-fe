@@ -40,17 +40,32 @@ const Login = ({ location: { state } }) => {
 	return (
 		<MainContainer>
 			<LoginContainer>
-				<LoginHeading>Login</LoginHeading>
+				<LoginHeading style={{ marginTop: "11%", marginBottom: 0 }}>Login</LoginHeading>
 				<LoginForm onSubmit={handleSubmit}>
 					<FormLabel>Email</FormLabel>
-					<LoginInput name="email" value={email} onChange={handleChange} />
+
+					<LoginInput
+						focused={email}
+						name="email"
+						type="email"
+						value={email}
+						onChange={handleChange}
+						placeholder="Enter a valid email address"
+						onFocus={(e) => (e.target.placeholder = "")}
+						onBlur={(e) => (e.target.placeholder = "Enter a valid email address")}
+					/>
 
 					<FormLabel>Password</FormLabel>
 					<LoginInput
+						focused={password}
 						name="password"
 						type="password"
 						value={password}
 						onChange={handleChange}
+						placeholder="Enter a valid password"
+						onFocus={(e) => (e.target.placeholder = "")}
+						onBlur={(e) => (e.target.placeholder = "Enter a valid password")}
+						style={!password ? { fontWeight: "initial" } : null}
 					/>
 
 					<LoginButton>Login</LoginButton>

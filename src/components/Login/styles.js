@@ -68,6 +68,10 @@ export const LoginInput = styled.input`
 	text-align: center;
 	letter-spacing: 1px;
 
+	&::placeholder {
+		color: ${(props) => props.theme.lightGrey};
+	}
+
 	&[type="password"] {
 		font-weight: bold;
 		letter-spacing: 1.5px;
