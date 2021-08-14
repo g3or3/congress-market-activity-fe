@@ -8,15 +8,15 @@ export const MainContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: "Quattrocento Sans", sans-serif;
-	background-color: #9e9ac8;
+	font-family: ${(props) => props.theme.font};
+	background-color: ${(props) => props.theme.lightPurple};
 `;
 
 export const LoginContainer = styled.div`
 	margin: auto auto;
 	width: 30%;
 	height: 60vh;
-	color: #807dba;
+	color: ${(props) => props.theme.darkPurple};
 	background-color: #ffffff;
 	border-radius: 50px;
 	box-shadow: 0 0 10px 5px #ccc;
@@ -52,7 +52,7 @@ export const LoginForm = styled.form`
 `;
 
 export const FormLabel = styled.label`
-	color: #807dba;
+	color: ${(props) => props.theme.darkPurple};
 	font-size: 1.1rem;
 `;
 
@@ -60,11 +60,11 @@ export const LoginInput = styled.input`
 	width: 50%;
 	margin: 1% 0 5%;
 	padding: 1.1% 4%;
-	border: 1px solid #807dba;
+	border: 1px solid ${(props) => props.theme.darkPurple};
 	border-radius: 35px;
 	outline: none;
 	font-size: 1.1rem;
-	color: #696969;
+	color: ${(props) => props.theme.darkGrey};
 	text-align: center;
 	letter-spacing: 1px;
 
@@ -77,20 +77,20 @@ export const LoginInput = styled.input`
 export const LoginButton = styled.button`
 	margin-top: 3%;
 	width: 30%;
-	font-family: "Quattrocento Sans", sans-serif;
+	font-family: ${(props) => props.theme.font};
 	letter-spacing: 2px;
 	color: #ffffff;
-	background-color: #807dba;
+	background-color: ${(props) => props.theme.darkPurple};
 	font-size: 1.2rem;
-	border: 3px solid #807dba;
+	border: 3px solid ${(props) => props.theme.darkPurple};
 	border-radius: 35px;
 	padding: 1% 5%;
 	cursor: pointer;
 	outline: none;
 
 	&:hover {
-		border: 3px solid #9e9ac8;
-		background-color: #9e9ac8;
+		border: 3px solid ${(props) => props.theme.lightPurple};
+		background-color: ${(props) => props.theme.lightPurple};
 	}
 
 	@media only screen and (${device.maxlg}) {
@@ -104,18 +104,17 @@ export const FormError = styled.p`
 	text-align: center;
 	margin: 5% 0 0;
 	font-size: 1.1rem;
-	color: #e57373;
+	color: ${(props) => props.theme.errorMessageColor};
 `;
 
 export const SignUpMessage = styled(Link)`
 	margin-top: 4%;
-	font-family: "Quattrocento Sans", sans-serif;
+	font-family: ${(props) => props.theme.font};
 	letter-spacing: 1px;
-	color: #807dba;
-	/* color: #6a51a3; */
+	color: ${(props) => props.theme.darkPurple};
 
 	&:hover {
-		color: #9e9ac8;
+		color: ${(props) => props.theme.lightPurple};
 	}
 
 	@media only screen and (${device.maxlg}) {

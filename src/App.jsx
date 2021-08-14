@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import { SignUp, Login, MostTransactedCompanies } from "./components";
-import GlobalStyle from "./styles";
+import { GlobalStyle } from "./styles";
 
 const App = () => {
 	return (
