@@ -31,11 +31,12 @@ export const LoginContainer = styled.div`
 export const LoginHeading = styled.h1`
 	font-size: 3.7rem;
 	text-align: center;
-	margin: 10% auto 4%;
+	margin: 10% auto 0;
 	letter-spacing: 3px;
 
 	@media only screen and (${device.maxlg}) {
 		font-size: 3.5rem;
+		margin: 10% auto 8%;
 	}
 `;
 

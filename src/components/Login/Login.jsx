@@ -40,7 +40,7 @@ const Login = ({ location: { state } }) => {
 	return (
 		<MainContainer>
 			<LoginContainer>
-				<LoginHeading style={{ marginTop: "11%", marginBottom: 0 }}>Login</LoginHeading>
+				<LoginHeading>Login</LoginHeading>
 				<LoginForm onSubmit={handleSubmit}>
 					<FormLabel>Email</FormLabel>
 
