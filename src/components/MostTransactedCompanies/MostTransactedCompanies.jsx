@@ -4,20 +4,16 @@ import axiosInstance from "../../services/axiosInstance";
 import { ResponsiveCirclePacking } from "@nivo/circle-packing";
 import {
 	CirclePackChartHeading,
+	BackButton,
 	MainContainer,
+	CompanyDiv,
 	CompanyTable,
 	StyledHeader,
+	StyledTableHeadings,
+	StyledRow,
 	StyledRowData,
-	ListDiv,
-	ListItem,
-	ListText,
-	ListAmount,
 	CircleChart,
 	Note,
-	BackButton,
-	StyledRow,
-	StyledTableHeadings,
-	CompanyDiv,
 } from "./styles";
 
 const MostTransactedCompanies = () => {
