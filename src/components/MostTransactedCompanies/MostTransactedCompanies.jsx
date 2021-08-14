@@ -5,6 +5,9 @@ import { ResponsiveCirclePacking } from "@nivo/circle-packing";
 import {
 	CirclePackChartHeading,
 	MainContainer,
+	CompanyTable,
+	StyledHeader,
+	StyledRowData,
 	ListDiv,
 	ListItem,
 	ListText,
@@ -12,6 +15,9 @@ import {
 	CircleChart,
 	Note,
 	BackButton,
+	StyledRow,
+	StyledTableHeadings,
+	CompanyDiv,
 } from "./styles";
 
 const MostTransactedCompanies = () => {
@@ -51,16 +57,28 @@ const MostTransactedCompanies = () => {
 			<BackButton onClick={() => goBack()}>← Back</BackButton>
 			<CirclePackChartHeading>Top 25 Transacted Companies</CirclePackChartHeading>
 			<MainContainer>
-				<ListDiv>
-					{circleData?.children
-						?.sort((a, b) => a.total - b.total)
-						.map((record, idx) => (
-							<ListItem>
-								<ListText key={idx}>{record.company}</ListText>
-								<ListAmount>{record.value}</ListAmount>
-							</ListItem>
-						))}
-				</ListDiv>
+				<CompanyDiv>
+					<CompanyTable>
+						<thead>
+							<StyledHeader>
+								<StyledTableHeadings>Ticker</StyledTableHeadings>
+								<StyledTableHeadings>Company</StyledTableHeadings>
+								<StyledTableHeadings>Total</StyledTableHeadings>
+							</StyledHeader>
+						</thead>
+						<tbody>
+							{circleData?.children
+								?.sort((a, b) => a.total - b.total)
+								.map((record, idx) => (
+									<StyledRow>
+										<StyledRowData>{record.id}</StyledRowData>
+										<StyledRowData>{record.company}</StyledRowData>
+										<td>{record.value}</td>
+									</StyledRow>
+								))}
+						</tbody>
+					</CompanyTable>
+				</CompanyDiv>
 
 				<CircleChart>
 					<ResponsiveCirclePacking
@@ -79,12 +97,12 @@ const MostTransactedCompanies = () => {
 						borderWidth={2}
 						borderColor={{ from: "color", modifiers: [["darker", 0.3]] }}
 					/>
+					<Note>
+						*Companies and corresponding number of transactions in the year{" "}
+						{new Date().getFullYear()}*
+					</Note>
 				</CircleChart>
 			</MainContainer>
-			<Note>
-				*Companies and corresponding number of transactions in the year{" "}
-				{new Date().getFullYear()}*
-			</Note>
 		</>
 	);
 };
