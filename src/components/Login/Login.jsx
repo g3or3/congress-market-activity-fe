@@ -43,9 +43,7 @@ const Login = ({ location: { state } }) => {
 				<LoginHeading>Login</LoginHeading>
 				<LoginForm onSubmit={handleSubmit}>
 					<FormLabel>Email</FormLabel>
-
 					<LoginInput
-						focused={email}
 						name="email"
 						type="email"
 						value={email}
@@ -57,7 +55,6 @@ const Login = ({ location: { state } }) => {
 
 					<FormLabel>Password</FormLabel>
 					<LoginInput
-						focused={password}
 						name="password"
 						type="password"
 						value={password}
