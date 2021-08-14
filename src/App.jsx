@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { MostTransactedCompanies } from "./components";
+import { SignUp, Login, MostTransactedCompanies } from "./components";
 import GlobalStyle from "./styles";
 
 const App = () => {
@@ -8,6 +8,8 @@ const App = () => {
 			<GlobalStyle />
 			<Switch>
 				<Route path="/most-transacted" component={MostTransactedCompanies} />
+				<Route path="/signup" component={SignUp} />
+				<Route path="/login" component={Login} />
 			</Switch>
 		</>
 	);
