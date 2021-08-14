@@ -42,18 +42,20 @@ export const MainContainer = styled.div`
 
 export const CircleChart = styled.div`
 	width: 47%;
-	height: 80vh;
+	height: 83vh;
 	margin-left: 5%;
 `;
 
 export const Note = styled.p`
-	margin: 0;
+	margin: 0 4% 0 0;
 	text-align: center;
 	font-family: ${(props) => props.theme.font};
 	color: ${(props) => props.theme.darkPurple};
+	text-align: end;
 
 	@media only screen and (${device.xl}) {
-		margin: 2% 0 0 5%;
+		margin: 2% 0 0 7%;
+		text-align: center;
 	}
 `;
 

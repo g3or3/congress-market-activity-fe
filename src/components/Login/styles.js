@@ -13,30 +13,29 @@ export const MainContainer = styled.div`
 `;
 
 export const LoginContainer = styled.div`
-	margin: auto auto;
 	width: 30%;
-	height: 60vh;
 	color: ${(props) => props.theme.darkPurple};
 	background-color: #ffffff;
 	border-radius: 50px;
 	box-shadow: 0 0 10px 5px #ccc;
 	box-sizing: border-box;
 
+	display: flex;
+	flex-direction: column;
+
 	@media only screen and (${device.maxlg}) {
-		width: 40%;
-		height: 75vh;
+		width: 41%;
 	}
 `;
 
 export const LoginHeading = styled.h1`
 	font-size: 3.7rem;
 	text-align: center;
-	margin: 10% auto 0;
+	margin: 7%;
 	letter-spacing: 3px;
 
 	@media only screen and (${device.maxlg}) {
 		font-size: 3.5rem;
-		margin: 10% auto 8%;
 	}
 `;
 
@@ -81,7 +80,7 @@ export const LoginInput = styled.input`
 
 export const LoginButton = styled.button`
 	margin-top: 3%;
-	width: 30%;
+	width: 33%;
 	font-family: ${(props) => props.theme.font};
 	letter-spacing: 2px;
 	color: #ffffff;
@@ -100,14 +99,14 @@ export const LoginButton = styled.button`
 
 	@media only screen and (${device.maxlg}) {
 		margin-top: 2%;
-		width: 27%;
+		width: 28%;
 	}
 `;
 
 export const FormError = styled.p`
 	width: 80%;
 	text-align: center;
-	margin: 5% 0 0;
+	margin: 5% 0;
 	font-size: 1.1rem;
 	color: ${(props) => props.theme.errorMessageColor};
 `;

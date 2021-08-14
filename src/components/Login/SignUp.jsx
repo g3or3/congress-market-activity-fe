@@ -11,6 +11,7 @@ import {
 	LoginHeading,
 	LoginButton,
 	FormError,
+	SignUpMessage,
 } from "./styles";
 
 const SignUp = () => {
@@ -76,6 +77,8 @@ const SignUp = () => {
 					/>
 
 					<LoginButton>Sign Up</LoginButton>
+
+					<SignUpMessage to="/login">Click here to login</SignUpMessage>
 
 					<FormError>{error}</FormError>
 				</LoginForm>
