@@ -37,7 +37,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<MainContainer>
+		<MainContainer signup={true}>
 			<LoginContainer>
 				<LoginHeading>Sign Up</LoginHeading>
 				<LoginForm onSubmit={handleSubmit}>

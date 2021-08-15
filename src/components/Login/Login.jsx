@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useLoginForm } from "../../hooks/useLoginForm";
 import { useAuth } from "../../contexts/AuthContext";
+import { Header } from "../index";
 import {
 	MainContainer,
 	LoginContainer,
@@ -38,41 +39,44 @@ const Login = ({ location: { state } }) => {
 	};
 
 	return (
-		<MainContainer>
-			<LoginContainer>
-				<LoginHeading>Login</LoginHeading>
-				<LoginForm onSubmit={handleSubmit}>
-					<FormLabel>Email</FormLabel>
-					<LoginInput
-						name="email"
-						type="email"
-						value={email}
-						onChange={handleChange}
-						placeholder="Enter a valid email address"
-						onFocus={(e) => (e.target.placeholder = "")}
-						onBlur={(e) => (e.target.placeholder = "Enter a valid email address")}
-					/>
+		<div style={{ height: "100vh", width: "100%", backgroundColor: "#9e9ac8" }}>
+			<Header />
+			<MainContainer>
+				<LoginContainer>
+					<LoginHeading>Login</LoginHeading>
+					<LoginForm onSubmit={handleSubmit}>
+						<FormLabel>Email</FormLabel>
+						<LoginInput
+							name="email"
+							type="email"
+							value={email}
+							onChange={handleChange}
+							placeholder="Enter a valid email address"
+							onFocus={(e) => (e.target.placeholder = "")}
+							onBlur={(e) => (e.target.placeholder = "Enter a valid email address")}
+						/>
 
-					<FormLabel>Password</FormLabel>
-					<LoginInput
-						name="password"
-						type="password"
-						value={password}
-						onChange={handleChange}
-						placeholder="Enter a valid password"
-						onFocus={(e) => (e.target.placeholder = "")}
-						onBlur={(e) => (e.target.placeholder = "Enter a valid password")}
-						style={!password ? { fontWeight: "initial" } : null}
-					/>
+						<FormLabel>Password</FormLabel>
+						<LoginInput
+							name="password"
+							type="password"
+							value={password}
+							onChange={handleChange}
+							placeholder="Enter a valid password"
+							onFocus={(e) => (e.target.placeholder = "")}
+							onBlur={(e) => (e.target.placeholder = "Enter a valid password")}
+							style={!password ? { fontWeight: "initial" } : null}
+						/>
 
-					<LoginButton>Login</LoginButton>
+						<LoginButton>Login</LoginButton>
 
-					<SignUpMessage to="/signup">Click here to sign up</SignUpMessage>
+						<SignUpMessage to="/signup">Click here to sign up</SignUpMessage>
 
-					<FormError>{error}</FormError>
-				</LoginForm>
-			</LoginContainer>
-		</MainContainer>
+						<FormError>{error}</FormError>
+					</LoginForm>
+				</LoginContainer>
+			</MainContainer>
+		</div>
 	);
 };
 

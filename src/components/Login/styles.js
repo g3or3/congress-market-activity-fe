@@ -4,7 +4,7 @@ import { device } from "../../styles/breakpoints";
 
 export const MainContainer = styled.div`
 	width: 100%;
-	height: 100vh;
+	height: ${(props) => (props.signup ? "100vh" : "88vh")};
 	display: flex;
 	justify-content: center;
 	align-items: center;
