@@ -19,7 +19,6 @@ export const LoginContainer = styled.div`
 	border-radius: 50px;
 	box-shadow: 0 0 10px 5px #ccc;
 	box-sizing: border-box;
-
 	display: flex;
 	flex-direction: column;
 
