@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axiosInstance from "../../services/axiosInstance";
 import { ResponsiveCirclePacking } from "@nivo/circle-packing";
@@ -49,7 +49,7 @@ const MostTransactedCompanies = () => {
 	}, []);
 
 	return (
-		<>
+		<div style={{ height: "100vh", backgroundColor: "#eeeef5" }}>
 			<BackButton onClick={() => goBack()}>← Back</BackButton>
 			<CirclePackChartHeading>Top 25 Transacted Companies</CirclePackChartHeading>
 			<MainContainer>
@@ -66,7 +66,7 @@ const MostTransactedCompanies = () => {
 							{circleData?.children
 								?.sort((a, b) => a.total - b.total)
 								.map((record, idx) => (
-									<StyledRow>
+									<StyledRow key={idx}>
 										<StyledRowData>{record.id}</StyledRowData>
 										<StyledRowData>{record.company}</StyledRowData>
 										<td>{record.value}</td>
@@ -99,7 +99,7 @@ const MostTransactedCompanies = () => {
 					</Note>
 				</CircleChart>
 			</MainContainer>
-		</>
+		</div>
 	);
 };
 

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
 
 export const BackButton = styled.div`
+	background-color: ${(props) => props.theme.lighterPurple};
 	font-family: ${(props) => props.theme.font};
 	color: ${(props) => props.theme.darkPurple};
 	font-size: 1.5rem;
@@ -15,13 +16,14 @@ export const BackButton = styled.div`
 
 	&:hover {
 		color: #ffffff;
-		border: 2.5px solid ${(props) => props.theme.lightPurple};
-		background-color: ${(props) => props.theme.lightPurple};
+		border: 2.5px solid ${(props) => props.theme.purple};
+		background-color: ${(props) => props.theme.purple};
 	}
 `;
 
 export const CirclePackChartHeading = styled.h1`
-	margin-top: 1.5%;
+	padding-top: 1.5%;
+	margin-top: 0;
 	margin-bottom: 3%;
 	text-align: center;
 	font-family: ${(props) => props.theme.font};
@@ -79,7 +81,7 @@ export const CompanyTable = styled.table`
 `;
 
 export const StyledHeader = styled.tr`
-	background-color: ${(props) => props.theme.lightPurple};
+	background-color: ${(props) => props.theme.purple};
 	color: #ffffff;
 	text-align: center;
 	letter-spacing: 1px;

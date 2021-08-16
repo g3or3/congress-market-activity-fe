@@ -1,10 +1,15 @@
 import { AdvancedChart } from "react-tradingview-embed";
+import { StockChart, StockChartContainer } from "./styles";
 
 const TradingViewWidget = ({ ticker }) => {
 	return (
-		<AdvancedChart
-			widgetProps={{ theme: "dark", symbol: ticker, range: "60M", details: true }}
-		/>
+		<StockChartContainer>
+			<StockChart>
+				<AdvancedChart
+					widgetProps={{ theme: "light", symbol: ticker, range: "60M", details: true }}
+				/>
+			</StockChart>
+		</StockChartContainer>
 	);
 };
 

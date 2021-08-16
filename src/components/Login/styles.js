@@ -4,16 +4,24 @@ import { device } from "../../styles/breakpoints";
 
 export const MainContainer = styled.div`
 	width: 100%;
-	height: 100vh;
+	height: ${(props) => (props.signup ? "100vh" : "88vh")};
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	font-family: ${(props) => props.theme.font};
 	background-color: ${(props) => props.theme.lightPurple};
 `;
 
+export const ImageContainer = styled.div`
+	@media only screen and (${device.xl}) {
+		margin-left: 5%;
+	}
+`;
+
 export const LoginContainer = styled.div`
-	width: 30%;
+	width: 41%;
+	min-width: 500px;
+	margin-right: ${(props) => (props.login ? "6%" : 0)};
 	color: ${(props) => props.theme.darkPurple};
 	background-color: #ffffff;
 	border-radius: 50px;
@@ -22,8 +30,8 @@ export const LoginContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 
-	@media only screen and (${device.maxlg}) {
-		width: 41%;
+	@media only screen and (${device.xl}) {
+		width: 30%;
 	}
 `;
 
@@ -92,8 +100,8 @@ export const LoginButton = styled.button`
 	outline: none;
 
 	&:hover {
-		border: 3px solid ${(props) => props.theme.lightPurple};
-		background-color: ${(props) => props.theme.lightPurple};
+		border: 3px solid ${(props) => props.theme.purple};
+		background-color: ${(props) => props.theme.purple};
 	}
 
 	@media only screen and (${device.maxlg}) {
@@ -117,7 +125,7 @@ export const SignUpMessage = styled(Link)`
 	color: ${(props) => props.theme.darkPurple};
 
 	&:hover {
-		color: ${(props) => props.theme.lightPurple};
+		color: ${(props) => props.theme.purple};
 	}
 
 	@media only screen and (${device.maxlg}) {

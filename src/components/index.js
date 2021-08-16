@@ -1,4 +1,10 @@
-export { default as TradingViewWidget } from "./TradingViewWidget/TradingViewWidget";
+export { default as Header } from "./Header/Header";
+export { default as Footer } from "./Footer/Footer";
+export { default as LandingPage } from "./LandingPage/LandingPage";
+export { default as About } from "./About/About";
+export { default as Search } from "./Search/Search";
 export { default as MostTransactedCompanies } from "./MostTransactedCompanies/MostTransactedCompanies";
-export { default as SignUp } from "./Login/SignUp";
 export { default as Login } from "./Login/Login";
+export { default as SignUp } from "./Login/SignUp";
+export { default as TradingViewWidget } from "./TradingViewWidget/TradingViewWidget";
+export { default as PrivateRoute } from "./PrivateRoute";
