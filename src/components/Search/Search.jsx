@@ -5,7 +5,7 @@ const Search = () => {
 	return (
 		<>
 			<Header />
-			<div style={{ height: "100vh", backgroundColor: "lavender" }}></div>
+			<div style={{ height: "100vh", backgroundColor: "#bcbddc" }}></div>
 		</>
 	);
 };

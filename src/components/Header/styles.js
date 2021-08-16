@@ -37,10 +37,10 @@ export const StyledNav = styled.nav`
 
 export const StyledLinkDiv = styled.div`
 	color: ${(props) => (props.$loginbtn ? "white" : props.theme.darkPurple)};
-	padding: ${(props) => (props.$loginbtn ? "8px 30px" : "3.5px 15px")};
-	border: ${(props) => (props.$loginbtn ? `1px solid ${props.theme.darkPurple}` : "")};
+	padding: ${(props) => (props.$loginbtn ? "8px 30px" : null)};
 	background-color: ${(props) => (props.$loginbtn ? props.theme.darkPurple : "")};
 	border-radius: 20px;
+	cursor: pointer;
 `;
 
 export const StyledLink = styled(NavLink)`

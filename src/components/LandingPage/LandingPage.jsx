@@ -5,7 +5,7 @@ function LandingPage(props) {
 	return (
 		<>
 			<Header />
-			<div style={{ height: "100vh", backgroundColor: "white" }}></div>
+			<div style={{ height: "100vh", backgroundColor: "#bcbddc" }}></div>
 		</>
 	);
 }
