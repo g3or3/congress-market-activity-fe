@@ -49,7 +49,7 @@ const MostTransactedCompanies = () => {
 	}, []);
 
 	return (
-		<>
+		<div style={{ height: "100vh", backgroundColor: "#eeeef5" }}>
 			<BackButton onClick={() => goBack()}>← Back</BackButton>
 			<CirclePackChartHeading>Top 25 Transacted Companies</CirclePackChartHeading>
 			<MainContainer>
@@ -99,7 +99,7 @@ const MostTransactedCompanies = () => {
 					</Note>
 				</CircleChart>
 			</MainContainer>
-		</>
+		</div>
 	);
 };
 

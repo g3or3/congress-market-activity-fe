@@ -3,13 +3,14 @@ import {
 	FaChartBar,
 	FaHome,
 	FaCommentAlt,
-	FaUserCircle,
+	FaSearch,
 	FaUserAltSlash,
+	FaUserAlt,
 } from "react-icons/fa";
 import { StyledHeader, StyledNav, StyledLinkDiv, StyledLink } from "./styles";
 import { useAuth } from "../../contexts/AuthContext";
 
-function Header(props) {
+function Header({ login }) {
 	const [shadow, setShadow] = useState(false);
 
 	const { currentUser, logout } = useAuth();
@@ -25,14 +26,23 @@ function Header(props) {
 	}, []);
 
 	return (
-		<StyledHeader shadow={shadow}>
+		<StyledHeader $shadow={shadow} $login={login}>
 			<StyledNav>
-				<StyledLinkDiv>
-					<FaHome />
-					<StyledLink exact to="/">
-						Home
-					</StyledLink>
-				</StyledLinkDiv>
+				{!currentUser && (
+					<StyledLinkDiv>
+						<FaHome />
+						<StyledLink to="/landing">Home</StyledLink>
+					</StyledLinkDiv>
+				)}
+
+				{currentUser && (
+					<StyledLinkDiv>
+						<FaSearch />
+						<StyledLink exact to="/">
+							Search
+						</StyledLink>
+					</StyledLinkDiv>
+				)}
 
 				<StyledLinkDiv>
 					<FaCommentAlt />
@@ -41,22 +51,22 @@ function Header(props) {
 
 				<StyledLinkDiv>
 					<FaChartBar />
-					<StyledLink to="/most-transacted">Most Transacted</StyledLink>
+					<StyledLink to="/most-transacted">Most Popular</StyledLink>
 				</StyledLinkDiv>
 
 				{!currentUser && (
-					<StyledLinkDiv loginBtn={true}>
-						<FaUserCircle />
-						<StyledLink loginBtn={true} to="/login">
+					<StyledLinkDiv $loginbtn={true}>
+						<FaUserAlt />
+						<StyledLink $loginbtn={true} to="/login">
 							Login
 						</StyledLink>
 					</StyledLinkDiv>
 				)}
 
 				{currentUser && (
-					<StyledLinkDiv loginBtn={true}>
+					<StyledLinkDiv $loginbtn={true}>
 						<FaUserAltSlash />
-						<StyledLink loginBtn={true} logout={true} to="/login" onClick={logout}>
+						<StyledLink $loginbtn={true} $logout={true} to="/login" onClick={logout}>
 							Logout
 						</StyledLink>
 					</StyledLinkDiv>
@@ -66,4 +76,4 @@ function Header(props) {
 	);
 }
 
-export default Header;
+export default React.memo(Header);

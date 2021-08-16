@@ -2,7 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 export const theme = {
 	font: "'Quattrocento Sans', sans-serif",
-	lightPurple: "#9e9ac8",
+	lighterPurple: "#eeeef5",
+	lightPurple: "#bcbddc",
+	purple: "#9e9ac8",
 	darkPurple: "#807dba",
 	darkerPurple: "#6a51a3",
 	stockPageBackgroundColor: "#121722",
@@ -13,6 +15,9 @@ export const theme = {
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    margin: 0
+    margin: 0;
+  }
+  ::-webkit-scrollbar {
+		display: none;
   }
 `;

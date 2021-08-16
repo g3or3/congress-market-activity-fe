@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useLoginForm } from "../../hooks/useLoginForm";
 import { useAuth } from "../../contexts/AuthContext";
 import { Header } from "../index";
+import img from "../../images/login.png";
 import {
 	MainContainer,
 	LoginContainer,
@@ -13,6 +14,7 @@ import {
 	LoginButton,
 	FormError,
 	SignUpMessage,
+	ImageContainer,
 } from "./styles";
 
 const Login = ({ location: { state } }) => {
@@ -39,10 +41,13 @@ const Login = ({ location: { state } }) => {
 	};
 
 	return (
-		<div style={{ height: "100vh", width: "100%", backgroundColor: "#9e9ac8" }}>
-			<Header />
+		<div style={{ height: "100vh", width: "100%", backgroundColor: "#bcbddc" }}>
+			<Header login={true} />
 			<MainContainer>
-				<LoginContainer>
+				<ImageContainer>
+					<img src={img} alt="Login Visual" />
+				</ImageContainer>
+				<LoginContainer login={true}>
 					<LoginHeading>Login</LoginHeading>
 					<LoginForm onSubmit={handleSubmit}>
 						<FormLabel>Email</FormLabel>
