@@ -36,7 +36,14 @@ const Login = ({ location: { state } }) => {
 			await login(email, password);
 			push("/");
 		} catch (e) {
-			setError(e.message);
+			if (
+				e.message ===
+				"There is no user record corresponding to this identifier. The user may have been deleted."
+			) {
+				setError("There is no user registered with that email.");
+			} else {
+				setError(e.message);
+			}
 		}
 	};
 

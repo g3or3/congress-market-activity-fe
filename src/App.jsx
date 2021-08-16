@@ -1,4 +1,6 @@
 import { Switch, Route, Redirect } from "react-router-dom";
+import { useAuth } from "./contexts/AuthContext";
+import { GlobalStyle } from "./styles";
 import {
 	SignUp,
 	Login,
@@ -8,8 +10,6 @@ import {
 	PrivateRoute,
 	Search,
 } from "./components";
-import { useAuth } from "./contexts/AuthContext";
-import { GlobalStyle } from "./styles";
 
 const App = () => {
 	const { currentUser } = useAuth();
@@ -19,13 +19,15 @@ const App = () => {
 			<GlobalStyle />
 			<Switch>
 				<Route path="/signup">{currentUser ? <Redirect to="/" /> : <SignUp />}</Route>
-				<Route path="/login">
-					{currentUser ? <Redirect to="/" /> : <Login location={{}} />}
-				</Route>
-				<Route path="/landing" component={LandingPage} />
+				<Route
+					path="/login"
+					render={(props) => (currentUser ? <Redirect to="/" /> : <Login {...props} />)}
+				/>
+				<Route path="/home" component={LandingPage} />
 				<Route path="/about" component={About} />
-				<Route path="/most-transacted" component={MostTransactedCompanies} />
+				<Route path="/most-popular" component={MostTransactedCompanies} />
 				<PrivateRoute exact path="/" component={Search} />
+				<Redirect to="/" />
 			</Switch>
 		</>
 	);

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {
-	FaChartBar,
 	FaHome,
-	FaCommentAlt,
 	FaSearch,
+	FaBookReader,
+	FaChartBar,
 	FaUserAltSlash,
 	FaUserAlt,
 } from "react-icons/fa";
@@ -31,7 +31,7 @@ function Header({ login }) {
 				{!currentUser && (
 					<StyledLinkDiv>
 						<FaHome />
-						<StyledLink to="/landing">Home</StyledLink>
+						<StyledLink to="/home">Home</StyledLink>
 					</StyledLinkDiv>
 				)}
 
@@ -45,13 +45,13 @@ function Header({ login }) {
 				)}
 
 				<StyledLinkDiv>
-					<FaCommentAlt />
+					<FaBookReader />
 					<StyledLink to="/about">About</StyledLink>
 				</StyledLinkDiv>
 
 				<StyledLinkDiv>
 					<FaChartBar />
-					<StyledLink to="/most-transacted">Most Popular</StyledLink>
+					<StyledLink to="/most-popular">Most Popular</StyledLink>
 				</StyledLinkDiv>
 
 				{!currentUser && (

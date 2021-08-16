@@ -19,7 +19,7 @@ const SignUp = () => {
 		registering: true,
 	});
 
-	const { signup } = useAuth();
+	const { signup, logout } = useAuth();
 	const { push } = useHistory();
 	const { email, password, confirmPassword } = formValues;
 
@@ -30,6 +30,9 @@ const SignUp = () => {
 
 		try {
 			await signup(email, password);
+			/* Firebase Auth .createUserWithEmailAndPassword() auto
+			signs in undesirably after signup so manual logout */
+			await logout();
 			push("/login", { email });
 		} catch (e) {
 			setError(e.message);
