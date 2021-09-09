@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useAuth } from "../../contexts/AuthContext";
+import { useHeaderShadow } from "../../hooks/useHeaderShadow";
+import { StyledHeader, StyledNav, StyledLinkDiv, StyledLink } from "./styles";
 import {
 	FaHome,
 	FaSearch,
@@ -7,26 +10,13 @@ import {
 	FaUserAltSlash,
 	FaUserAlt,
 } from "react-icons/fa";
-import { StyledHeader, StyledNav, StyledLinkDiv, StyledLink } from "./styles";
-import { useAuth } from "../../contexts/AuthContext";
 
 function Header({ login }) {
-	const [shadow, setShadow] = useState(false);
-
 	const { currentUser, logout } = useAuth();
-
-	const handleScroll = () => {
-		if (document.documentElement.scrollTop !== 0) {
-			setShadow(true);
-		} else setShadow(false);
-	};
-
-	useEffect(() => {
-		window.onscroll = () => handleScroll();
-	}, []);
+	const [shadow, animate] = useHeaderShadow();
 
 	return (
-		<StyledHeader $shadow={shadow} $login={login}>
+		<StyledHeader $shadow={shadow} $animate={animate} $login={login}>
 			<StyledNav>
 				{!currentUser && (
 					<StyledLinkDiv>

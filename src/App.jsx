@@ -4,7 +4,7 @@ import { GlobalStyle } from "./styles";
 import {
 	SignUp,
 	Login,
-	LandingPage,
+	Home,
 	About,
 	MostTransactedCompanies,
 	PrivateRoute,
@@ -23,7 +23,7 @@ const App = () => {
 					path="/login"
 					render={(props) => (currentUser ? <Redirect to="/" /> : <Login {...props} />)}
 				/>
-				<Route path="/home" component={LandingPage} />
+				<Route path="/home" component={Home} />
 				<Route path="/about" component={About} />
 				<Route path="/most-popular" component={MostTransactedCompanies} />
 				<PrivateRoute exact path="/" component={Search} />

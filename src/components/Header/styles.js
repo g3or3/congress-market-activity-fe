@@ -7,8 +7,12 @@ export const StyledHeader = styled.header`
 	padding: 1rem 0 1rem;
 	position: sticky;
 	top: -1px;
-	animation: ${(props) => (props.$shadow ? "1s shadow ease" : "1s no-shadow ease")};
-	box-shadow: ${(props) => (props.$shadow ? "0 -10px 15px 15px #8892b0" : null)};
+	animation: ${(props) => {
+		if (!props.$animate) return null;
+		return props.$shadow ? "1s shadow ease" : "1s no-shadow ease";
+	}};
+	box-shadow: ${(props) =>
+		props.$shadow && props.$animate ? "0 -10px 15px 15px #8892b0" : null};
 
 	@keyframes shadow {
 		0% {

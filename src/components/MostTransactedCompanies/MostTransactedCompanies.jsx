@@ -26,7 +26,7 @@ const MostTransactedCompanies = () => {
 			let i = 0;
 			const colors = ["#C6DBEF", "#4292C6", "#9ECAE1", "#6BAED6", "#BCBDDC", "#9E9AC8"];
 
-			const { data } = await axiosInstance.get("api/record/most_transacted");
+			const { data } = await axiosInstance.get("api/record/most-transacted");
 
 			setCircleData(
 				data.reduce(
