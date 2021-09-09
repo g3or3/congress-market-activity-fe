@@ -2,9 +2,17 @@
 
 Congress Market Activity front end set up to view data from the Office of the Clerk, U.S. House of Representatives. Currently supports the ability to retrieve the list of congress people that have transacted in the market from the year 2017-forward as well as the transaction details that were scraped directly from the Transaction Reports downloaded from: [Office of the Clerk](https://disclosures-clerk.house.gov/PublicDisclosure/FinancialDisclosure)
 
+[Back-End Repo](https://github.com/g3or3/congress-market-activity-be)
+
+[Database Creation](https://github.com/g3or3/congress-market-activity-db)
+
+[Database Updates](https://github.com/g3or3/cron-congress-market-activity)
+
+---
+
 ## Requirements
 
-For development, you will only need Node.js installed on your environement. And please use the appropriate Editorconfig plugin for your Editor (not mandatory).
+For development, you will need Node.js installed on your environement.
 
 [Node](http://nodejs.org/) is really easy to install & includes [NPM](https://npmjs.org/).
 You should be able to run the following command to confirm your current version.
