@@ -54,9 +54,9 @@ function Header({ login }) {
 				)}
 
 				{currentUser && (
-					<StyledLinkDiv $loginbtn={true}>
+					<StyledLinkDiv $loginbtn={true} onClick={logout}>
 						<FaUserAltSlash />
-						<StyledLink $loginbtn={true} $logout={true} to="/login" onClick={logout}>
+						<StyledLink $loginbtn={true} $logout={true} to="/login">
 							Logout
 						</StyledLink>
 					</StyledLinkDiv>

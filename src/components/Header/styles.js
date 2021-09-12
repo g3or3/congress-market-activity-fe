@@ -45,6 +45,10 @@ export const StyledLinkDiv = styled.div`
 	background-color: ${(props) => (props.$loginbtn ? props.theme.darkPurple : "")};
 	border-radius: 20px;
 	cursor: pointer;
+
+	&:hover {
+		background-color: ${(props) => (props.$loginbtn ? props.theme.purple : "")};
+	}
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -52,11 +56,20 @@ export const StyledLink = styled(NavLink)`
 	font-size: 1.3rem;
 	text-decoration: none;
 	margin-left: 10px;
+	letter-spacing: ${(props) => (props.$loginbtn ? "1px" : 0)};
 
 	&.active {
-		text-decoration: ${(props) => (props.$logout || !props.$loginbtn ? "" : "underline")};
+		text-decoration: ${(props) => (!props.$loginbtn ? "" : "underline")};
 		padding-bottom: 2px;
 		border-bottom: ${(props) =>
 			props.$loginbtn ? "" : `2px solid ${props.theme.darkPurple}`};
+
+		&:hover {
+			color: ${(props) => props.theme.darkPurple};
+		}
+	}
+
+	&:hover {
+		color: ${(props) => (props.$loginbtn ? "" : props.theme.purple)};
 	}
 `;

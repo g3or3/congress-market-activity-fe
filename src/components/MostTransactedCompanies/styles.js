@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
+import { ShowingRecords, SelectTotal } from "../Search/styles";
 
 export const BackButton = styled.div`
 	background-color: ${(props) => props.theme.lighterPurple};
@@ -22,9 +23,9 @@ export const BackButton = styled.div`
 `;
 
 export const CirclePackChartHeading = styled.h1`
-	padding-top: 1.5%;
+	padding-top: 2%;
 	margin-top: 0;
-	margin-bottom: 3%;
+	margin-bottom: 2.5%;
 	text-align: center;
 	font-family: ${(props) => props.theme.font};
 	color: ${(props) => props.theme.darkPurple};
@@ -44,21 +45,8 @@ export const MainContainer = styled.div`
 
 export const CircleChart = styled.div`
 	width: 47%;
-	height: 83vh;
+	height: 80vh;
 	margin-left: 5%;
-`;
-
-export const Note = styled.p`
-	margin: 0 4% 0 0;
-	text-align: center;
-	font-family: ${(props) => props.theme.font};
-	color: ${(props) => props.theme.darkPurple};
-	text-align: end;
-
-	@media only screen and (${device.xl}) {
-		margin: 2% 0 0 7%;
-		text-align: center;
-	}
 `;
 
 export const CompanyDiv = styled.div`
@@ -67,6 +55,7 @@ export const CompanyDiv = styled.div`
 	overflow: hidden;
 	box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 	margin-left: 7%;
+	margin-top: 1.5%;
 
 	@media only screen and (${device.xl}) {
 		width: 30%;
@@ -122,44 +111,30 @@ export const StyledRowData = styled.td`
 	}
 `;
 
-// unused
-
-export const ListDiv = styled.div`
-	width: 33%;
-	height: auto;
-	border: 4px solid ${(props) => props.theme.darkPurple};
-	border-radius: 35px;
-	padding: 2%;
-	max-height: 100%;
-	box-sizing: border-box;
-	overflow-y: auto;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	@media only screen and (${device.xl}) {
-		width: 30%;
-	}
-`;
-
-export const ListItem = styled.div`
-	display: flex;
-	justify-content: space-between;
-	font-size: 0.9rem;
-	margin: 0.7% 0 0.6%;
-	color: ${(props) => props.theme.darkPurple};
-
-	@media only screen and (${device.xl}) {
-		font-size: 1.1rem;
-		margin: 1.5% 0 1.5%;
-	}
-`;
-
-export const ListText = styled.p`
+export const Note = styled.div`
+	margin: 0 4.5% 0 0;
+	text-align: center;
 	font-family: ${(props) => props.theme.font};
-	margin: 0;
+	color: ${(props) => props.theme.darkPurple};
+	text-align: end;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media only screen and (${device.xl}) {
+		margin: 2% 0 0 7%;
+		text-align: center;
+	}
 `;
 
-export const ListAmount = styled.span`
-	font-weight: bold;
+export const YearSelectionContainer = styled(ShowingRecords)`
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	margin: 0 10px;
+	padding: 2px 2px;
+`;
+
+export const SelectYear = styled(SelectTotal)`
+	font-size: 1rem;
 `;

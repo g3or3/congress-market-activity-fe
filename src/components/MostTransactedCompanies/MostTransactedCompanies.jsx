@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import axiosInstance from "../../services/axiosInstance";
+import { fetchMostTransacted } from "../../services";
 import { ResponsiveCirclePacking } from "@nivo/circle-packing";
+import { FaRegCalendarAlt } from "react-icons/fa";
 import {
 	CirclePackChartHeading,
 	BackButton,
@@ -14,19 +15,26 @@ import {
 	StyledRowData,
 	CircleChart,
 	Note,
+	YearSelectionContainer,
+	SelectYear,
 } from "./styles";
 
 const MostTransactedCompanies = () => {
 	const [circleData, setCircleData] = useState([]);
+	const [year, setYear] = useState(new Date().getFullYear().toString());
 
 	const { goBack } = useHistory();
+
+	const handleYearChange = (e) => {
+		setYear(e.target.value);
+	};
 
 	useEffect(() => {
 		(async () => {
 			let i = 0;
 			const colors = ["#C6DBEF", "#4292C6", "#9ECAE1", "#6BAED6", "#BCBDDC", "#9E9AC8"];
 
-			const { data } = await axiosInstance.get("api/record/most-transacted");
+			const { data } = await fetchMostTransacted(year);
 
 			setCircleData(
 				data.reduce(
@@ -46,7 +54,7 @@ const MostTransactedCompanies = () => {
 				)
 			);
 		})();
-	}, []);
+	}, [year]);
 
 	return (
 		<div style={{ height: "100vh", backgroundColor: "#eeeef5" }}>
@@ -94,8 +102,18 @@ const MostTransactedCompanies = () => {
 						borderColor={{ from: "color", modifiers: [["darker", 0.3]] }}
 					/>
 					<Note>
-						*Companies and corresponding number of transactions in the year{" "}
-						{new Date().getFullYear()}*
+						*Companies and corresponding number of transactions in the year
+						<YearSelectionContainer>
+							<FaRegCalendarAlt />
+							<SelectYear onChange={handleYearChange}>
+								<option value={2021} label="2021" />
+								<option value={2020} label="2020" />
+								<option value={2019} label="2019" />
+								<option value={2018} label="2018" />
+								<option value={2017} label="2017" />
+							</SelectYear>
+						</YearSelectionContainer>
+						*
 					</Note>
 				</CircleChart>
 			</MainContainer>
