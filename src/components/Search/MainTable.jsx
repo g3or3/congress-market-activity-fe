@@ -166,8 +166,11 @@ const colData = [
 	},
 	{
 		Header: "Date",
-		accessor: "date",
+		id: "date",
+		accessor: (row) => new Date(row.date),
+		Cell: ({ value }) => value.toLocaleDateString(),
 		width: "4%",
+		sortType: "datetime",
 	},
 	{
 		Header: "Amount Range",
